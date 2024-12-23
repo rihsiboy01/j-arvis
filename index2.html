@@ -1,0 +1,117 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>jarvis</h1>
+    <footer class="n">
+      <input type="file" id="lolo" placeholder="bos ">
+      <input type="search" placeholder="Search note..." class="iki" />
+      <button id="send">send</button>
+    </footer>
+    <ol></ol>
+    <script src="./script.js"></script>
+  </body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Tahlilchi</title>
+  </head>
+  <style>
+      body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #000;
+          color: #0fefef;
+          overflow: hidden;
+      }
+  
+      .dashboard {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          position: relative;
+      }
+  
+      .main-circle {
+          width: 300px;
+          height: 300px;
+          border: 2px solid #0fefef;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+      }
+  
+      .center-text {
+          color: #0fefef;
+          font-size: 24px;
+          font-weight: bold;
+      }
+  
+      .widgets {
+          position: absolute;
+          top: 10%;
+          left: 10%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+      }
+  
+      .widget {
+          background-color: rgba(15, 239, 239, 0.2);
+          border: 1px solid #0fefef;
+          padding: 10px 20px;
+          border-radius: 5px;
+          text-align: center;
+          cursor: pointer;
+      }
+  </style>
+  <body>
+      <div class="dashboard">
+          <div class="main-circle" style="margin-left: 760px; ">
+              <p class="center-text">Tahlilchi</p>
+          </div>
+          <div class="widgets">
+              <div class="widget" id="widget1">CPU</div>
+              <div class="widget" id="widget2">RAM</div>
+              <div class="widget" id="widget3">Disk</div>
+          </div>
+      </div>
+  
+      <script>
+          document.addEventListener("DOMContentLoaded", () => {
+              const widgets = document.querySelectorAll(".widget");
+  
+              const data = {
+                  CPU: `${Math.floor(Math.random() * 100)}%`,
+                  RAM: `${Math.floor(Math.random() * 16)} GB ishlatilgan`,
+                  Disk: `${Math.floor(Math.random() * 500)} GB bo'sh`
+              };
+  
+              widgets.forEach(widget => {
+                  widget.addEventListener("click", () => {
+                      const id = widget.id;
+                      let info = "";
+                      if (id === "widget1") {
+                          info = `CPU yuki: ${data.CPU}`;
+                      } else if (id === "widget2") {
+                          info = `RAM holati: ${data.RAM}`;
+                      } else if (id === "widget3") {
+                          info = `Disk holati: ${data.Disk}`;
+                      }
+                      alert(info);
+                  });
+              });
+          });
+      </script>
+  </body>
+  </html>
